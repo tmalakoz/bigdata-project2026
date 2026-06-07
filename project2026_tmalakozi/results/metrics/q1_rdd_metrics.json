@@ -1,0 +1,101 @@
+{
+    "execution_time_seconds": 1240.86,
+    "top_17": [
+        {
+            "pickup_date": "2024-12-12",
+            "pickup_hour": 9,
+            "trips": 6655,
+            "total_revenue": 184638.03
+        },
+        {
+            "pickup_date": "2024-11-14",
+            "pickup_hour": 8,
+            "trips": 6655,
+            "total_revenue": 172171.97
+        },
+        {
+            "pickup_date": "2024-11-13",
+            "pickup_hour": 8,
+            "trips": 6648,
+            "total_revenue": 169220.93
+        },
+        {
+            "pickup_date": "2024-12-12",
+            "pickup_hour": 10,
+            "trips": 6554,
+            "total_revenue": 199475.50
+        },
+        {
+            "pickup_date": "2024-11-13",
+            "pickup_hour": 9,
+            "trips": 6538,
+            "total_revenue": 176194.92
+        },
+        {
+            "pickup_date": "2024-11-14",
+            "pickup_hour": 9,
+            "trips": 6345,
+            "total_revenue": 170575.58
+        },
+        {
+            "pickup_date": "2024-11-13",
+            "pickup_hour": 10,
+            "trips": 6174,
+            "total_revenue": 165594.21
+        },
+        {
+            "pickup_date": "2024-05-14",
+            "pickup_hour": 8,
+            "trips": 6157,
+            "total_revenue": 174138.27
+        },
+        {
+            "pickup_date": "2024-11-12",
+            "pickup_hour": 8,
+            "trips": 6101,
+            "total_revenue": 161113.85
+        },
+        {
+            "pickup_date": "2024-02-14",
+            "pickup_hour": 8,
+            "trips": 6101,
+            "total_revenue": 145488.84
+        },
+        {
+            "pickup_date": "2024-09-12",
+            "pickup_hour": 8,
+            "trips": 6091,
+            "total_revenue": 144304.22
+        },
+        {
+            "pickup_date": "2024-11-12",
+            "pickup_hour": 9,
+            "trips": 6086,
+            "total_revenue": 165594.21
+        },
+        {
+            "pickup_date": "2024-11-14",
+            "pickup_hour": 10,
+            "trips": 6079,
+            "total_revenue": 171163.39
+        },
+        {
+            "pickup_date": "2024-12-13",
+            "pickup_hour": 10,
+            "trips": 6077,
+            "total_revenue": 175980.32
+        },
+        {
+            "pickup_date": "2024-12-14",
+            "pickup_hour": 10,
+            "trips": 6077,
+            "total_revenue": 144304.22
+        },
+        {
+            "pickup_date": "2024-11-12",
+            "pickup_hour": 10,
+            "trips": 5975,
+            "total_revenue": 172574.04
+        }
+    ]
+}
