@@ -1,0 +1,45 @@
+{
+    "execution_time_seconds": 40.79,
+    "top_5_routes": [
+        {
+            "Pickup_Zone": "Upper East Side North",
+            "Dropoff_Zone": "Upper East Side South",
+            "total_trips": 5399,
+            "avg_distance_miles": 1.08,
+            "avg_duration_minutes": 7.79,
+            "total_revenue": 79025.27
+        },
+        {
+            "Pickup_Zone": "Upper East Side South",
+            "Dropoff_Zone": "Upper East Side North",
+            "total_trips": 4877,
+            "avg_distance_miles": 0.99,
+            "avg_duration_minutes": 8.31,
+            "total_revenue": 72239.81
+        },
+        {
+            "Pickup_Zone": "Upper East Side North",
+            "Dropoff_Zone": "Upper East Side North",
+            "total_trips": 4045,
+            "avg_distance_miles": 0.63,
+            "avg_duration_minutes": 4.73,
+            "total_revenue": 48525.81
+        },
+        {
+            "Pickup_Zone": "Upper East Side North",
+            "Dropoff_Zone": "Midtown Center",
+            "total_trips": 3784,
+            "avg_distance_miles": 1.96,
+            "avg_duration_minutes": 13.38,
+            "total_revenue": 77371.86
+        },
+        {
+            "Pickup_Zone": "Upper East Side South",
+            "Dropoff_Zone": "Midtown Center",
+            "total_trips": 3250,
+            "avg_distance_miles": 1.1,
+            "avg_duration_minutes": 9.58,
+            "total_revenue": 52028.68
+        }
+    ]
+}
