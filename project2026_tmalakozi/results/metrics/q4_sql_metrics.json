@@ -1,0 +1,181 @@
+{
+    "hourly_payment_stats": [
+        {
+            "pickup_hour": 7,
+            "payment_type": 1,
+            "trips": 81306,
+            "payment_share_in_hour": 0.865,
+            "avg_fare_amount": 19.18,
+            "avg_total_amount": 27.97,
+            "avg_tip_amount": 3.96,
+            "tip_rate": 0.2343,
+            "zero_tip_share": 0.0745,
+            "avg_trip_distance": 4.26,
+            "avg_duration_minutes": 16.27
+        },
+        {
+            "pickup_hour": 7,
+            "payment_type": 2,
+            "trips": 12694,
+            "payment_share_in_hour": 0.135,
+            "avg_fare_amount": 19.75,
+            "avg_total_amount": 24.4,
+            "avg_tip_amount": 0.0,
+            "tip_rate": 0.0001,
+            "zero_tip_share": 0.9998,
+            "avg_trip_distance": 3.8,
+            "avg_duration_minutes": 16.11
+        },
+        {
+            "pickup_hour": 8,
+            "payment_type": 1,
+            "trips": 115284,
+            "payment_share_in_hour": 0.87,
+            "avg_fare_amount": 18.25,
+            "avg_total_amount": 26.81,
+            "avg_tip_amount": 3.85,
+            "tip_rate": 0.2368,
+            "zero_tip_share": 0.0641,
+            "avg_trip_distance": 3.14,
+            "avg_duration_minutes": 16.43
+        },
+        {
+            "pickup_hour": 8,
+            "payment_type": 2,
+            "trips": 17231,
+            "payment_share_in_hour": 0.13,
+            "avg_fare_amount": 18.52,
+            "avg_total_amount": 23.16,
+            "avg_tip_amount": 0.0,
+            "tip_rate": 0.0001,
+            "zero_tip_share": 0.9998,
+            "avg_trip_distance": 3.25,
+            "avg_duration_minutes": 15.92
+        },
+        {
+            "pickup_hour": 9,
+            "payment_type": 1,
+            "trips": 129304,
+            "payment_share_in_hour": 0.8482,
+            "avg_fare_amount": 18.45,
+            "avg_total_amount": 27.28,
+            "avg_tip_amount": 3.98,
+            "tip_rate": 0.2403,
+            "zero_tip_share": 0.0611,
+            "avg_trip_distance": 3.13,
+            "avg_duration_minutes": 16.81
+        },
+        {
+            "pickup_hour": 9,
+            "payment_type": 2,
+            "trips": 23147,
+            "payment_share_in_hour": 0.1518,
+            "avg_fare_amount": 18.25,
+            "avg_total_amount": 22.86,
+            "avg_tip_amount": 0.0,
+            "tip_rate": 0.0,
+            "zero_tip_share": 1.0,
+            "avg_trip_distance": 3.05,
+            "avg_duration_minutes": 16.09
+        },
+        {
+            "pickup_hour": 10,
+            "payment_type": 1,
+            "trips": 140233,
+            "payment_share_in_hour": 0.833,
+            "avg_fare_amount": 18.91,
+            "avg_total_amount": 27.98,
+            "avg_tip_amount": 4.12,
+            "tip_rate": 0.2421,
+            "zero_tip_share": 0.0585,
+            "avg_trip_distance": 3.17,
+            "avg_duration_minutes": 17.54
+        },
+        {
+            "pickup_hour": 10,
+            "payment_type": 2,
+            "trips": 28124,
+            "payment_share_in_hour": 0.167,
+            "avg_fare_amount": 18.12,
+            "avg_total_amount": 22.69,
+            "avg_tip_amount": 0.0,
+            "tip_rate": 0.0,
+            "zero_tip_share": 1.0,
+            "avg_trip_distance": 2.93,
+            "avg_duration_minutes": 16.85
+        }
+    ],
+    "vendor_summary": [
+        {
+            "vendor_id": 1,
+            "payment_type": 1,
+            "trips": 127779,
+            "payment_share": 0.8616
+        },
+        {
+            "vendor_id": 1,
+            "payment_type": 2,
+            "trips": 20529,
+            "payment_share": 0.1384
+        },
+        {
+            "vendor_id": 2,
+            "payment_type": 1,
+            "trips": 338348,
+            "payment_share": 0.848
+        },
+        {
+            "vendor_id": 2,
+            "payment_type": 2,
+            "trips": 60667,
+            "payment_share": 0.152
+        }
+    ],
+    "card_vs_cash_comparison": [
+        {
+            "pickup_hour": 7,
+            "card_trips": 81306,
+            "cash_trips": 12694,
+            "card_share": 0.865,
+            "avg_total_card": 27.97,
+            "avg_total_cash": 24.4,
+            "avg_fare_card": 19.18,
+            "avg_fare_cash": 19.75,
+            "avg_tip_rate_card": 0.2343
+        },
+        {
+            "pickup_hour": 8,
+            "card_trips": 115284,
+            "cash_trips": 17231,
+            "card_share": 0.87,
+            "avg_total_card": 26.81,
+            "avg_total_cash": 23.16,
+            "avg_fare_card": 18.25,
+            "avg_fare_cash": 18.52,
+            "avg_tip_rate_card": 0.2368
+        },
+        {
+            "pickup_hour": 9,
+            "card_trips": 129304,
+            "cash_trips": 23147,
+            "card_share": 0.8482,
+            "avg_total_card": 27.28,
+            "avg_total_cash": 22.86,
+            "avg_fare_card": 18.45,
+            "avg_fare_cash": 18.25,
+            "avg_tip_rate_card": 0.2403
+        },
+        {
+            "pickup_hour": 10,
+            "card_trips": 140233,
+            "cash_trips": 28124,
+            "card_share": 0.833,
+            "avg_total_card": 27.98,
+            "avg_total_cash": 22.69,
+            "avg_fare_card": 18.91,
+            "avg_fare_cash": 18.12,
+            "avg_tip_rate_card": 0.2421
+        }
+    ],
+    "execution_time_seconds": 33.81
+}
