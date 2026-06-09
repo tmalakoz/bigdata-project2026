@@ -1,0 +1,34 @@
+{
+    "implementation": "Built-in Catalyst Functions",
+    "execution_time_seconds": 47.5,
+    "hourly_metrics": [
+        {
+            "pickup_hour": 7,
+            "total_trips": 62893,
+            "avg_distance_km": 3.13,
+            "avg_speed_kmh": 15.25,
+            "congestion_percentage": 55.8
+        },
+        {
+            "pickup_hour": 8,
+            "total_trips": 74707,
+            "avg_distance_km": 2.77,
+            "avg_speed_kmh": 11.77,
+            "congestion_percentage": 78.23
+        },
+        {
+            "pickup_hour": 9,
+            "total_trips": 70063,
+            "avg_distance_km": 2.8,
+            "avg_speed_kmh": 11.74,
+            "congestion_percentage": 80.66
+        },
+        {
+            "pickup_hour": 10,
+            "total_trips": 61628,
+            "avg_distance_km": 2.78,
+            "avg_speed_kmh": 11.78,
+            "congestion_percentage": 79.52
+        }
+    ]
+}
