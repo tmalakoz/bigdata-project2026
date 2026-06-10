@@ -1,0 +1,364 @@
+{
+    "total_trips_in_window": 612111,
+    "airport_vs_non_airport_comparison": [
+        {
+            "is_airport_trip": 1,
+            "trips": 56797,
+            "avg_distance": 13.72,
+            "avg_duration": 39.68,
+            "avg_total_amount": 77.63
+        },
+        {
+            "is_airport_trip": 0,
+            "trips": 555314,
+            "avg_distance": 5.62,
+            "avg_duration": 14.44,
+            "avg_total_amount": 21.41
+        }
+    ],
+    "top_17_borough_flows": [
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "Manhattan",
+            "trips": 517673,
+            "trip_share_percent": 84.57,
+            "total_revenue": 10403498.29,
+            "avg_total_amount": 20.1,
+            "avg_trip_distance": 3.72,
+            "avg_duration_minutes": 13.03,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Queens",
+            "do_borough": "Manhattan",
+            "trips": 28073,
+            "trip_share_percent": 4.59,
+            "total_revenue": 2223370.11,
+            "avg_total_amount": 79.2,
+            "avg_trip_distance": 15.22,
+            "avg_duration_minutes": 47.23,
+            "airport_trip_share_percent": 84.34
+        },
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "Queens",
+            "trips": 19988,
+            "trip_share_percent": 3.27,
+            "total_revenue": 1451408.18,
+            "avg_total_amount": 72.61,
+            "avg_trip_distance": 14.32,
+            "avg_duration_minutes": 34.68,
+            "airport_trip_share_percent": 86.52
+        },
+        {
+            "pu_borough": "Queens",
+            "do_borough": "Queens",
+            "trips": 10083,
+            "trip_share_percent": 1.65,
+            "total_revenue": 406716.14,
+            "avg_total_amount": 40.34,
+            "avg_trip_distance": 11.27,
+            "avg_duration_minutes": 21.55,
+            "airport_trip_share_percent": 72.24
+        },
+        {
+            "pu_borough": "Brooklyn",
+            "do_borough": "Brooklyn",
+            "trips": 6819,
+            "trip_share_percent": 1.11,
+            "total_revenue": 156064.83,
+            "avg_total_amount": 22.89,
+            "avg_trip_distance": 22.21,
+            "avg_duration_minutes": 26.94,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Queens",
+            "do_borough": "Brooklyn",
+            "trips": 5600,
+            "trip_share_percent": 0.91,
+            "total_revenue": 359109.89,
+            "avg_total_amount": 64.13,
+            "avg_trip_distance": 12.65,
+            "avg_duration_minutes": 41.9,
+            "airport_trip_share_percent": 78.36
+        },
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "Brooklyn",
+            "trips": 4452,
+            "trip_share_percent": 0.73,
+            "total_revenue": 202377.27,
+            "avg_total_amount": 45.46,
+            "avg_trip_distance": 7.49,
+            "avg_duration_minutes": 31.91,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Brooklyn",
+            "do_borough": "Manhattan",
+            "trips": 4379,
+            "trip_share_percent": 0.72,
+            "total_revenue": 178567.74,
+            "avg_total_amount": 40.78,
+            "avg_trip_distance": 87.4,
+            "avg_duration_minutes": 46.32,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Bronx",
+            "do_borough": "Manhattan",
+            "trips": 1958,
+            "trip_share_percent": 0.32,
+            "total_revenue": 71833.32,
+            "avg_total_amount": 36.69,
+            "avg_trip_distance": 60.82,
+            "avg_duration_minutes": 45.79,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "EWR",
+            "trips": 1849,
+            "trip_share_percent": 0.3,
+            "total_revenue": 233278.7,
+            "avg_total_amount": 126.16,
+            "avg_trip_distance": 17.93,
+            "avg_duration_minutes": 35.6,
+            "airport_trip_share_percent": 100.0
+        },
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "Bronx",
+            "trips": 1631,
+            "trip_share_percent": 0.27,
+            "total_revenue": 69051.82,
+            "avg_total_amount": 42.34,
+            "avg_trip_distance": 7.99,
+            "avg_duration_minutes": 33.23,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Manhattan",
+            "do_borough": "Unknown",
+            "trips": 1531,
+            "trip_share_percent": 0.25,
+            "total_revenue": 33980.82,
+            "avg_total_amount": 22.2,
+            "avg_trip_distance": 2.2,
+            "avg_duration_minutes": 13.95,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Brooklyn",
+            "do_borough": "Queens",
+            "trips": 1353,
+            "trip_share_percent": 0.22,
+            "total_revenue": 64501.64,
+            "avg_total_amount": 47.67,
+            "avg_trip_distance": 37.85,
+            "avg_duration_minutes": 40.93,
+            "airport_trip_share_percent": 26.16
+        },
+        {
+            "pu_borough": "Queens",
+            "do_borough": "N/A",
+            "trips": 1059,
+            "trip_share_percent": 0.17,
+            "total_revenue": 136325.77,
+            "avg_total_amount": 128.73,
+            "avg_trip_distance": 21.09,
+            "avg_duration_minutes": 42.7,
+            "airport_trip_share_percent": 91.6
+        },
+        {
+            "pu_borough": "Unknown",
+            "do_borough": "Unknown",
+            "trips": 998,
+            "trip_share_percent": 0.16,
+            "total_revenue": 23730.82,
+            "avg_total_amount": 23.78,
+            "avg_trip_distance": 2.66,
+            "avg_duration_minutes": 17.86,
+            "airport_trip_share_percent": 0.0
+        },
+        {
+            "pu_borough": "Queens",
+            "do_borough": "Bronx",
+            "trips": 988,
+            "trip_share_percent": 0.16,
+            "total_revenue": 71978.24,
+            "avg_total_amount": 72.85,
+            "avg_trip_distance": 100.87,
+            "avg_duration_minutes": 39.53,
+            "airport_trip_share_percent": 73.38
+        },
+        {
+            "pu_borough": "Bronx",
+            "do_borough": "Bronx",
+            "trips": 951,
+            "trip_share_percent": 0.16,
+            "total_revenue": 22866.51,
+            "avg_total_amount": 24.04,
+            "avg_trip_distance": 68.72,
+            "avg_duration_minutes": 22.61,
+            "airport_trip_share_percent": 0.0
+        }
+    ],
+    "top_17_airport_routes": [
+        {
+            "pu_zone": "Times Sq/Theatre District",
+            "do_zone": "LaGuardia Airport",
+            "trips": 1843,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 76.9,
+            "avg_duration_minutes": 33.9,
+            "avg_trip_distance": 11.48
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Times Sq/Theatre District",
+            "trips": 1633,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 81.96,
+            "avg_duration_minutes": 48.62,
+            "avg_trip_distance": 10.58
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Midtown Center",
+            "trips": 1291,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 79.46,
+            "avg_duration_minutes": 46.21,
+            "avg_trip_distance": 10.11
+        },
+        {
+            "pu_zone": "Midtown Center",
+            "do_zone": "LaGuardia Airport",
+            "trips": 1015,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 73.45,
+            "avg_duration_minutes": 30.9,
+            "avg_trip_distance": 10.81
+        },
+        {
+            "pu_zone": "JFK Airport",
+            "do_zone": "Times Sq/Theatre District",
+            "trips": 933,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 92.77,
+            "avg_duration_minutes": 65.49,
+            "avg_trip_distance": 18.0
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Midtown East",
+            "trips": 896,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 74.7,
+            "avg_duration_minutes": 40.17,
+            "avg_trip_distance": 9.77
+        },
+        {
+            "pu_zone": "Midtown North",
+            "do_zone": "LaGuardia Airport",
+            "trips": 810,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 73.26,
+            "avg_duration_minutes": 32.47,
+            "avg_trip_distance": 10.86
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Midtown South",
+            "trips": 767,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 74.81,
+            "avg_duration_minutes": 39.27,
+            "avg_trip_distance": 9.73
+        },
+        {
+            "pu_zone": "JFK Airport",
+            "do_zone": "Outside of NYC",
+            "trips": 720,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 126.37,
+            "avg_duration_minutes": 42.53,
+            "avg_trip_distance": 20.93
+        },
+        {
+            "pu_zone": "Times Sq/Theatre District",
+            "do_zone": "JFK Airport",
+            "trips": 686,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 91.78,
+            "avg_duration_minutes": 54.69,
+            "avg_trip_distance": 17.82
+        },
+        {
+            "pu_zone": "Midtown East",
+            "do_zone": "LaGuardia Airport",
+            "trips": 644,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 69.37,
+            "avg_duration_minutes": 26.04,
+            "avg_trip_distance": 10.4
+        },
+        {
+            "pu_zone": "JFK Airport",
+            "do_zone": "JFK Airport",
+            "trips": 642,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 43.57,
+            "avg_duration_minutes": 17.57,
+            "avg_trip_distance": 3.52
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Midtown North",
+            "trips": 582,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 80.4,
+            "avg_duration_minutes": 48.29,
+            "avg_trip_distance": 10.54
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Murray Hill",
+            "trips": 581,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 71.84,
+            "avg_duration_minutes": 34.95,
+            "avg_trip_distance": 9.38
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Clinton East",
+            "trips": 497,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 83.26,
+            "avg_duration_minutes": 48.68,
+            "avg_trip_distance": 11.04
+        },
+        {
+            "pu_zone": "LaGuardia Airport",
+            "do_zone": "Garment District",
+            "trips": 481,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 78.41,
+            "avg_duration_minutes": 42.63,
+            "avg_trip_distance": 10.05
+        },
+        {
+            "pu_zone": "Upper East Side North",
+            "do_zone": "LaGuardia Airport",
+            "trips": 453,
+            "avg_airport_fee": 0.0,
+            "avg_total_amount": 61.13,
+            "avg_duration_minutes": 21.41,
+            "avg_trip_distance": 8.72
+        }
+    ],
+    "execution_time_seconds": 82.91
+}
