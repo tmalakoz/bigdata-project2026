@@ -1,0 +1,297 @@
+26/06/10 14:55:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/06/10 14:55:53 INFO SparkContext: Running Spark version 3.5.8
+26/06/10 14:55:53 INFO SparkContext: OS info Linux, 6.12.63+deb13-amd64, amd64
+26/06/10 14:55:53 INFO SparkContext: Java version 11.0.29
+26/06/10 14:55:53 INFO ResourceUtils: ==============================================================
+26/06/10 14:55:53 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/06/10 14:55:53 INFO ResourceUtils: ==============================================================
+26/06/10 14:55:53 INFO SparkContext: Submitted application: Project2026_Q5_JoinAblation_2121247
+26/06/10 14:55:53 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/06/10 14:55:53 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/06/10 14:55:53 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/06/10 14:55:54 INFO SecurityManager: Changing view acls to: spark,tbalanou
+26/06/10 14:55:54 INFO SecurityManager: Changing modify acls to: spark,tbalanou
+26/06/10 14:55:54 INFO SecurityManager: Changing view acls groups to: 
+26/06/10 14:55:54 INFO SecurityManager: Changing modify acls groups to: 
+26/06/10 14:55:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark, tbalanou; groups with view permissions: EMPTY; users with modify permissions: spark, tbalanou; groups with modify permissions: EMPTY
+26/06/10 14:55:54 INFO Utils: Successfully started service 'sparkDriver' on port 7078.
+26/06/10 14:55:54 INFO SparkEnv: Registering MapOutputTracker
+26/06/10 14:55:54 INFO SparkEnv: Registering BlockManagerMaster
+26/06/10 14:55:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/06/10 14:55:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/06/10 14:55:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/06/10 14:55:54 INFO DiskBlockManager: Created local directory at /var/data/spark-4c0cc990-9c59-4b1a-9499-2a83e1c79cde/blockmgr-4bf20010-97b5-4b01-9453-be23455d6e0d
+26/06/10 14:55:54 INFO MemoryStore: MemoryStore started with capacity 413.9 MiB
+26/06/10 14:55:54 INFO SparkEnv: Registering OutputCommitCoordinator
+26/06/10 14:55:54 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/06/10 14:55:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/06/10 14:55:55 INFO SparkKubernetesClientFactory: Auto-configuring K8S client using current context from users K8S config file
+26/06/10 14:55:58 INFO ExecutorPodsAllocator: Going to request 1 executors from Kubernetes for ResourceProfile Id: 0, target: 1, known: 0, sharedSlotFromPendingPods: 2147483647.
+26/06/10 14:55:58 INFO ExecutorPodsAllocator: Found 0 reusable PVCs from 0 PVCs
+26/06/10 14:55:58 INFO BasicExecutorFeatureStep: Decommissioning not enabled, skipping shutdown script
+26/06/10 14:55:58 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 7079.
+26/06/10 14:55:58 INFO NettyBlockTransferService: Server created on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc 10.233.82.196:7079
+26/06/10 14:55:58 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/06/10 14:55:58 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc, 7079, None)
+26/06/10 14:55:58 INFO BlockManagerMasterEndpoint: Registering block manager q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 with 413.9 MiB RAM, BlockManagerId(driver, q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc, 7079, None)
+26/06/10 14:55:58 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc, 7079, None)
+26/06/10 14:55:58 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc, 7079, None)
+26/06/10 14:55:59 INFO SingleEventLogFileWriter: Logging events to hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/tbalanou/logs/spark-b9f7495c93574524bbbe445d70a73c70.inprogress
+26/06/10 14:56:02 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: No executor found for 10.233.83.243:53944
+26/06/10 14:56:03 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.233.83.243:53950) with ID 1,  ResourceProfileId 0
+26/06/10 14:56:03 INFO KubernetesClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/06/10 14:56:03 INFO BlockManagerMasterEndpoint: Registering block manager 10.233.83.243:41279 with 413.9 MiB RAM, BlockManagerId(1, 10.233.83.243, 41279, None)
+26/06/10 14:56:03 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/06/10 14:56:03 INFO SharedState: Warehouse path is 'file:/opt/spark/work-dir/spark-warehouse'.
+26/06/10 14:56:05 INFO InMemoryFileIndex: It took 488 ms to list leaf files for 1 paths.
+26/06/10 14:56:06 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/06/10 14:56:06 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/06/10 14:56:06 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+26/06/10 14:56:06 INFO DAGScheduler: Parents of final stage: List()
+26/06/10 14:56:06 INFO DAGScheduler: Missing parents: List()
+26/06/10 14:56:06 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/06/10 14:56:06 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 105.6 KiB, free 413.8 MiB)
+26/06/10 14:56:06 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 38.4 KiB, free 413.8 MiB)
+26/06/10 14:56:06 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 38.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:06 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1611
+26/06/10 14:56:06 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/06/10 14:56:06 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+26/06/10 14:56:06 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (10.233.83.243, executor 1, partition 0, PROCESS_LOCAL, 9305 bytes) 
+26/06/10 14:56:06 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.233.83.243:41279 (size: 38.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:08 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1801 ms on 10.233.83.243 (executor 1) (1/1)
+26/06/10 14:56:08 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/06/10 14:56:08 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.960 s
+26/06/10 14:56:08 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/06/10 14:56:08 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+26/06/10 14:56:08 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 2.044205 s
+26/06/10 14:56:08 INFO BlockManagerInfo: Removed broadcast_0_piece0 on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 in memory (size: 38.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:08 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 10.233.83.243:41279 in memory (size: 38.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:09 INFO InMemoryFileIndex: It took 4 ms to list leaf files for 1 paths.
+26/06/10 14:56:09 INFO InMemoryFileIndex: It took 4 ms to list leaf files for 1 paths.
+26/06/10 14:56:11 INFO FileSourceStrategy: Pushed Filters: 
+26/06/10 14:56:11 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#52, None)) > 0)
+26/06/10 14:56:11 INFO CodeGenerator: Code generated in 191.849888 ms
+26/06/10 14:56:11 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 203.3 KiB, free 413.7 MiB)
+26/06/10 14:56:11 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 35.5 KiB, free 413.7 MiB)
+26/06/10 14:56:11 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 35.5 KiB, free: 413.9 MiB)
+26/06/10 14:56:11 INFO SparkContext: Created broadcast 1 from csv at NativeMethodAccessorImpl.java:0
+26/06/10 14:56:11 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+26/06/10 14:56:11 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/06/10 14:56:11 INFO DAGScheduler: Got job 1 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/06/10 14:56:11 INFO DAGScheduler: Final stage: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0)
+26/06/10 14:56:11 INFO DAGScheduler: Parents of final stage: List()
+26/06/10 14:56:11 INFO DAGScheduler: Missing parents: List()
+26/06/10 14:56:11 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[5] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/06/10 14:56:11 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 13.5 KiB, free 413.7 MiB)
+26/06/10 14:56:11 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 413.7 MiB)
+26/06/10 14:56:11 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 6.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:11 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1611
+26/06/10 14:56:11 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[5] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/06/10 14:56:11 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+26/06/10 14:56:11 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (10.233.83.243, executor 1, partition 0, ANY, 9658 bytes) 
+26/06/10 14:56:11 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.233.83.243:41279 (size: 6.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:12 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.233.83.243:41279 (size: 35.5 KiB, free: 413.9 MiB)
+26/06/10 14:56:12 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 662 ms on 10.233.83.243 (executor 1) (1/1)
+26/06/10 14:56:12 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+26/06/10 14:56:12 INFO DAGScheduler: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0) finished in 0.690 s
+26/06/10 14:56:12 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/06/10 14:56:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+26/06/10 14:56:12 INFO DAGScheduler: Job 1 finished: csv at NativeMethodAccessorImpl.java:0, took 0.704434 s
+26/06/10 14:56:12 INFO CodeGenerator: Code generated in 13.950327 ms
+26/06/10 14:56:12 INFO BlockManagerInfo: Removed broadcast_2_piece0 on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 in memory (size: 6.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:12 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 10.233.83.243:41279 in memory (size: 6.4 KiB, free: 413.9 MiB)
+26/06/10 14:56:12 INFO FileSourceStrategy: Pushed Filters: 
+26/06/10 14:56:12 INFO FileSourceStrategy: Post-Scan Filters: 
+26/06/10 14:56:12 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 203.3 KiB, free 413.5 MiB)
+26/06/10 14:56:12 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 35.5 KiB, free 413.5 MiB)
+26/06/10 14:56:12 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 35.5 KiB, free: 413.9 MiB)
+26/06/10 14:56:12 INFO SparkContext: Created broadcast 3 from csv at NativeMethodAccessorImpl.java:0
+26/06/10 14:56:12 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+26/06/10 14:56:12 INFO DataSourceStrategy: Pruning directories with: pickup_day#25 IN (12,13,14)
+26/06/10 14:56:12 INFO FileSourceStrategy: Pushed Filters: IsNotNull(duration_minutes),IsNotNull(trip_distance),IsNotNull(total_amount),In(pickup_hour, [10,7,8,9]),GreaterThan(duration_minutes,0.0),GreaterThan(trip_distance,0.0),GreaterThan(total_amount,0.0),IsNotNull(pu_location_id)
+26/06/10 14:56:12 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(duration_minutes#23),isnotnull(trip_distance#4),isnotnull(total_amount#16),pickup_hour#22 IN (7,8,9,10),(duration_minutes#23 > 0.0),(trip_distance#4 > 0.0),(total_amount#16 > 0.0),isnotnull(pu_location_id#7)
+26/06/10 14:56:12 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LocationID)
+26/06/10 14:56:12 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LocationID#69)
+26/06/10 14:56:12 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/06/10 14:56:13 INFO CodeGenerator: Code generated in 81.818704 ms
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 208.2 KiB, free 413.3 MiB)
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 37.1 KiB, free 413.2 MiB)
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 37.1 KiB, free: 413.8 MiB)
+26/06/10 14:56:13 INFO SparkContext: Created broadcast 4 from collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35
+26/06/10 14:56:13 INFO InMemoryFileIndex: Selected 3 partitions out of 31, pruned 90.32258064516128% partitions.
+26/06/10 14:56:13 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/06/10 14:56:13 INFO DAGScheduler: Registering RDD 15 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) as input to shuffle 0
+26/06/10 14:56:13 INFO DAGScheduler: Got map stage job 2 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) with 4 output partitions
+26/06/10 14:56:13 INFO DAGScheduler: Final stage: ShuffleMapStage 2 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35)
+26/06/10 14:56:13 INFO DAGScheduler: Parents of final stage: List()
+26/06/10 14:56:13 INFO DAGScheduler: Missing parents: List()
+26/06/10 14:56:13 INFO DAGScheduler: Submitting ShuffleMapStage 2 (MapPartitionsRDD[15] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35), which has no missing parents
+26/06/10 14:56:13 INFO CodeGenerator: Code generated in 22.801322 ms
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 203.2 KiB, free 413.0 MiB)
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 36.5 KiB, free 413.0 MiB)
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 11.9 KiB, free 413.0 MiB)
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 11.9 KiB, free: 413.8 MiB)
+26/06/10 14:56:13 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1611
+26/06/10 14:56:13 INFO DAGScheduler: Submitting 4 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[15] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+26/06/10 14:56:13 INFO TaskSchedulerImpl: Adding task set 2.0 with 4 tasks resource profile 0
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 35.4 KiB, free 412.9 MiB)
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 35.4 KiB, free: 413.8 MiB)
+26/06/10 14:56:13 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (10.233.83.243, executor 1, partition 0, ANY, 13565 bytes) 
+26/06/10 14:56:13 INFO SparkContext: Created broadcast 5 from collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35
+26/06/10 14:56:13 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+26/06/10 14:56:13 INFO DAGScheduler: Registering RDD 19 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) as input to shuffle 1
+26/06/10 14:56:13 INFO DAGScheduler: Got map stage job 3 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) with 1 output partitions
+26/06/10 14:56:13 INFO DAGScheduler: Final stage: ShuffleMapStage 3 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35)
+26/06/10 14:56:13 INFO DAGScheduler: Parents of final stage: List()
+26/06/10 14:56:13 INFO DAGScheduler: Missing parents: List()
+26/06/10 14:56:13 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[19] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35), which has no missing parents
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 26.8 KiB, free 412.9 MiB)
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.233.83.243:41279 (size: 11.9 KiB, free: 413.9 MiB)
+26/06/10 14:56:13 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 12.6 KiB, free 412.9 MiB)
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 12.6 KiB, free: 413.8 MiB)
+26/06/10 14:56:13 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1611
+26/06/10 14:56:13 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[19] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) (first 15 tasks are for partitions Vector(0))
+26/06/10 14:56:13 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+26/06/10 14:56:13 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.233.83.243:41279 (size: 37.1 KiB, free: 413.8 MiB)
+26/06/10 14:56:22 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 3) (10.233.83.243, executor 1, partition 1, ANY, 14065 bytes) 
+26/06/10 14:56:22 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 9416 ms on 10.233.83.243 (executor 1) (1/4)
+26/06/10 14:56:30 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 4) (10.233.83.243, executor 1, partition 2, ANY, 16315 bytes) 
+26/06/10 14:56:30 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 3) in 8056 ms on 10.233.83.243 (executor 1) (2/4)
+26/06/10 14:56:35 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 5) (10.233.83.243, executor 1, partition 3, ANY, 13565 bytes) 
+26/06/10 14:56:35 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 4) in 5088 ms on 10.233.83.243 (executor 1) (3/4)
+26/06/10 14:56:37 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 6) (10.233.83.243, executor 1, partition 0, ANY, 9647 bytes) 
+26/06/10 14:56:37 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 5) in 1475 ms on 10.233.83.243 (executor 1) (4/4)
+26/06/10 14:56:37 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/06/10 14:56:37 INFO DAGScheduler: ShuffleMapStage 2 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) finished in 24.070 s
+26/06/10 14:56:37 INFO DAGScheduler: looking for newly runnable stages
+26/06/10 14:56:37 INFO DAGScheduler: running: Set(ShuffleMapStage 3)
+26/06/10 14:56:37 INFO DAGScheduler: waiting: Set()
+26/06/10 14:56:37 INFO DAGScheduler: failed: Set()
+26/06/10 14:56:37 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.233.83.243:41279 (size: 12.6 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.233.83.243:41279 (size: 35.4 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 6) in 254 ms on 10.233.83.243 (executor 1) (1/1)
+26/06/10 14:56:37 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/06/10 14:56:37 INFO DAGScheduler: ShuffleMapStage 3 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) finished in 24.266 s
+26/06/10 14:56:37 INFO DAGScheduler: looking for newly runnable stages
+26/06/10 14:56:37 INFO DAGScheduler: running: Set()
+26/06/10 14:56:37 INFO DAGScheduler: waiting: Set()
+26/06/10 14:56:37 INFO DAGScheduler: failed: Set()
+26/06/10 14:56:37 INFO ShufflePartitionsUtil: For shuffle(0, 1), advisory target size: 67108864, actual target size 27241310, minimum partition size: 1048576
+26/06/10 14:56:37 INFO CodeGenerator: Code generated in 70.523042 ms
+26/06/10 14:56:37 INFO CodeGenerator: Code generated in 12.47315 ms
+26/06/10 14:56:37 INFO BlockManagerInfo: Removed broadcast_6_piece0 on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 in memory (size: 11.9 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 10.233.83.243:41279 in memory (size: 11.9 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO BlockManagerInfo: Removed broadcast_7_piece0 on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 in memory (size: 12.6 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 10.233.83.243:41279 in memory (size: 12.6 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO CodeGenerator: Code generated in 9.832294 ms
+26/06/10 14:56:37 INFO SparkContext: Starting job: collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35
+26/06/10 14:56:37 INFO DAGScheduler: Got job 4 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) with 1 output partitions
+26/06/10 14:56:37 INFO DAGScheduler: Final stage: ResultStage 6 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35)
+26/06/10 14:56:37 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5, ShuffleMapStage 4)
+26/06/10 14:56:37 INFO DAGScheduler: Missing parents: List()
+26/06/10 14:56:37 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[26] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35), which has no missing parents
+26/06/10 14:56:37 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 63.0 KiB, free 412.9 MiB)
+26/06/10 14:56:37 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 27.7 KiB, free 412.9 MiB)
+26/06/10 14:56:37 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:7079 (size: 27.7 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1611
+26/06/10 14:56:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[26] at collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) (first 15 tasks are for partitions Vector(0))
+26/06/10 14:56:37 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+26/06/10 14:56:37 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 7) (10.233.83.243, executor 1, partition 0, NODE_LOCAL, 9300 bytes) 
+26/06/10 14:56:37 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.233.83.243:41279 (size: 27.7 KiB, free: 413.8 MiB)
+26/06/10 14:56:37 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.233.83.243:53950
+26/06/10 14:56:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.233.83.243:53950
+26/06/10 14:56:38 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 7) in 606 ms on 10.233.83.243 (executor 1) (1/1)
+26/06/10 14:56:38 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+26/06/10 14:56:38 INFO DAGScheduler: ResultStage 6 (collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35) finished in 0.623 s
+26/06/10 14:56:38 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+26/06/10 14:56:38 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+26/06/10 14:56:38 INFO DAGScheduler: Job 4 finished: collect at /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d/q5_join_ablation.py:35, took 0.641340 s
+
+==================================================
+ΦΥΣΙΚΟ ΣΧΕΔΙΟ ΕΚΤΕΛΕΣΗΣ (ΧΩΡΙΣ BROADCAST)
+==================================================
+26/06/10 14:56:38 INFO DataSourceStrategy: Pruning directories with: pickup_day#25 IN (12,13,14)
+26/06/10 14:56:38 INFO FileSourceStrategy: Pushed Filters: IsNotNull(duration_minutes),IsNotNull(trip_distance),IsNotNull(total_amount),In(pickup_hour, [10,7,8,9]),GreaterThan(duration_minutes,0.0),GreaterThan(trip_distance,0.0),GreaterThan(total_amount,0.0),IsNotNull(pu_location_id)
+26/06/10 14:56:38 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(duration_minutes#23),isnotnull(trip_distance#4),isnotnull(total_amount#16),pickup_hour#22 IN (7,8,9,10),(duration_minutes#23 > 0.0),(trip_distance#4 > 0.0),(total_amount#16 > 0.0),isnotnull(pu_location_id#7)
+26/06/10 14:56:38 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LocationID)
+26/06/10 14:56:38 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LocationID#69)
+== Physical Plan ==
+AdaptiveSparkPlan (10)
++- SortMergeJoin Inner (9)
+   :- Sort (4)
+   :  +- Exchange (3)
+   :     +- Filter (2)
+   :        +- Scan parquet  (1)
+   +- Sort (8)
+      +- Exchange (7)
+         +- Filter (6)
+            +- Scan csv  (5)
+
+
+(1) Scan parquet 
+Output [26]: [vendor_id#0, tpep_pickup_datetime#1, tpep_dropoff_datetime#2, passenger_count#3, trip_distance#4, rate_code_id#5, store_and_fwd_flag#6, pu_location_id#7, do_location_id#8, payment_type#9, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_ts#19, dropoff_ts#20, pickup_date#21, pickup_hour#22, duration_minutes#23, trip_distance_km#24, pickup_day#25]
+Batched: true
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/tbalanou/project2026/data/parquet/yellow_tripdata_2024]
+PartitionFilters: [pickup_day#25 IN (12,13,14)]
+PushedFilters: [IsNotNull(duration_minutes), IsNotNull(trip_distance), IsNotNull(total_amount), In(pickup_hour, [10,7,8,9]), GreaterThan(duration_minutes,0.0), GreaterThan(trip_distance,0.0), GreaterThan(total_amount,0.0), IsNotNull(pu_location_id)]
+ReadSchema: struct<vendor_id:int,tpep_pickup_datetime:string,tpep_dropoff_datetime:string,passenger_count:int,trip_distance:double,rate_code_id:int,store_and_fwd_flag:string,pu_location_id:int,do_location_id:int,payment_type:int,fare_amount:double,extra:double,mta_tax:double,tip_amount:double,tolls_amount:double,improvement_surcharge:double,total_amount:double,congestion_surcharge:double,airport_fee:double,pickup_ts:timestamp,dropoff_ts:timestamp,pickup_date:date,pickup_hour:int,duration_minutes:double,trip_distance_km:double>
+
+(2) Filter
+Input [26]: [vendor_id#0, tpep_pickup_datetime#1, tpep_dropoff_datetime#2, passenger_count#3, trip_distance#4, rate_code_id#5, store_and_fwd_flag#6, pu_location_id#7, do_location_id#8, payment_type#9, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_ts#19, dropoff_ts#20, pickup_date#21, pickup_hour#22, duration_minutes#23, trip_distance_km#24, pickup_day#25]
+Condition : (((((((isnotnull(duration_minutes#23) AND isnotnull(trip_distance#4)) AND isnotnull(total_amount#16)) AND pickup_hour#22 IN (7,8,9,10)) AND (duration_minutes#23 > 0.0)) AND (trip_distance#4 > 0.0)) AND (total_amount#16 > 0.0)) AND isnotnull(pu_location_id#7))
+
+(3) Exchange
+Input [26]: [vendor_id#0, tpep_pickup_datetime#1, tpep_dropoff_datetime#2, passenger_count#3, trip_distance#4, rate_code_id#5, store_and_fwd_flag#6, pu_location_id#7, do_location_id#8, payment_type#9, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_ts#19, dropoff_ts#20, pickup_date#21, pickup_hour#22, duration_minutes#23, trip_distance_km#24, pickup_day#25]
+Arguments: hashpartitioning(pu_location_id#7, 200), ENSURE_REQUIREMENTS, [plan_id=157]
+
+(4) Sort
+Input [26]: [vendor_id#0, tpep_pickup_datetime#1, tpep_dropoff_datetime#2, passenger_count#3, trip_distance#4, rate_code_id#5, store_and_fwd_flag#6, pu_location_id#7, do_location_id#8, payment_type#9, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_ts#19, dropoff_ts#20, pickup_date#21, pickup_hour#22, duration_minutes#23, trip_distance_km#24, pickup_day#25]
+Arguments: [pu_location_id#7 ASC NULLS FIRST], false, 0
+
+(5) Scan csv 
+Output [4]: [LocationID#69, Borough#70, Zone#71, service_zone#72]
+Batched: false
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/data/taxi_zone_lookup.csv]
+PushedFilters: [IsNotNull(LocationID)]
+ReadSchema: struct<LocationID:string,Borough:string,Zone:string,service_zone:string>
+
+(6) Filter
+Input [4]: [LocationID#69, Borough#70, Zone#71, service_zone#72]
+Condition : isnotnull(LocationID#69)
+
+(7) Exchange
+Input [4]: [LocationID#69, Borough#70, Zone#71, service_zone#72]
+Arguments: hashpartitioning(cast(LocationID#69 as int), 200), ENSURE_REQUIREMENTS, [plan_id=158]
+
+(8) Sort
+Input [4]: [LocationID#69, Borough#70, Zone#71, service_zone#72]
+Arguments: [cast(LocationID#69 as int) ASC NULLS FIRST], false, 0
+
+(9) SortMergeJoin
+Left keys [1]: [pu_location_id#7]
+Right keys [1]: [cast(LocationID#69 as int)]
+Join type: Inner
+Join condition: None
+
+(10) AdaptiveSparkPlan
+Output [30]: [vendor_id#0, tpep_pickup_datetime#1, tpep_dropoff_datetime#2, passenger_count#3, trip_distance#4, rate_code_id#5, store_and_fwd_flag#6, pu_location_id#7, do_location_id#8, payment_type#9, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_ts#19, dropoff_ts#20, pickup_date#21, pickup_hour#22, duration_minutes#23, trip_distance_km#24, pickup_day#25, LocationID#69, Borough#70, Zone#71, service_zone#72]
+Arguments: isFinalPlan=false
+
+
+
+=== ΧΡΟΝΟΣ ΕΚΤΕΛΕΣΗΣ ΜΕ SORT MERGE JOIN: 33.86 δευτερόλεπτα ===
+26/06/10 14:56:38 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/06/10 14:56:38 INFO SparkUI: Stopped Spark web UI at http://q5-join-ablation-py-3640e59eb20831ad-driver-svc.tbalanou-priv.svc:4040
+26/06/10 14:56:38 INFO KubernetesClusterSchedulerBackend: Shutting down all executors
+26/06/10 14:56:38 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Asking each executor to shut down
+26/06/10 14:56:38 WARN ExecutorPodsWatchSnapshotSource: Kubernetes client has been closed.
+26/06/10 14:56:39 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/06/10 14:56:39 INFO MemoryStore: MemoryStore cleared
+26/06/10 14:56:39 INFO BlockManager: BlockManager stopped
+26/06/10 14:56:39 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/06/10 14:56:39 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/06/10 14:56:39 INFO SparkContext: Successfully stopped SparkContext
+26/06/10 14:56:39 INFO ShutdownHookManager: Shutdown hook called
+26/06/10 14:56:39 INFO ShutdownHookManager: Deleting directory /tmp/spark-2ebbb701-0d71-4732-b139-17d0d109dd9d
+26/06/10 14:56:39 INFO ShutdownHookManager: Deleting directory /var/data/spark-4c0cc990-9c59-4b1a-9499-2a83e1c79cde/spark-9da27cfe-89f3-4958-ad83-779eaf1e8dc8
+26/06/10 14:56:39 INFO ShutdownHookManager: Deleting directory /var/data/spark-4c0cc990-9c59-4b1a-9499-2a83e1c79cde/spark-9da27cfe-89f3-4958-ad83-779eaf1e8dc8/pyspark-cc9023ca-53d6-4e56-8e39-2df1d20e7093
