@@ -6,39 +6,46 @@ from pyspark.sql.functions import col, when, count, round as spark_round, desc, 
 
 def main():
     parser = argparse.ArgumentParser(description="Exploratory Data Analysis (EDA)")
-    parser.add_argument("--input-base", type=str, required=True, help="HDFS base path for Parquet files")
-    args = parser.parse_args()
+    parser.add_argument("--input-base", type=str, required=True, help="HDFS base path")
+    args, _ = parser.parse_known_args()
 
     spark = SparkSession.builder \
         .appName("Project2026_EDA") \
         .getOrCreate()
 
-    print("Φόρτωση δεδομένων Parquet...")
-    df_2015 = spark.read.parquet(f"{args.input_base}/yellow_tripdata_2015")
-    df_2024 = spark.read.parquet(f"{args.input_base}/yellow_tripdata_2024")
-    df_lookup = spark.read.parquet(f"{args.input_base}/taxi_zone_lookup")
+    print("Φόρτωση δεδομένων...")
+    # ΣΧΟΛΙΑΣΜΕΝΟ ΤΟ 2015 ΓΙΑΤΙ ΔΕΝ ΥΠΑΡΧΕΙ
+    # df_2015 = spark.read.parquet(f"{args.input_base}/yellow_tripdata_2015")
+    
+    # Σωστό path για το 2024 (όπως το είχαμε στο Q1)
+    df_2024 = spark.read.parquet(f"{args.input_base}/data/parquet/yellow_tripdata_2024")
+    
+    # Το lookup συνήθως είναι CSV. Αν το έχεις κάνει parquet, άλλαξε το ".csv" σε ".parquet"
+    df_lookup = spark.read.csv("hdfs://hdfs-namenode.default.svc.cluster.local:9000/data/taxi_zone_lookup.csv", header=True, inferSchema=True)
 
     eda_results = {}
 
-    # --- 1. Πίνακας Nulls (Ποσοστό null ανά στήλη) ---
+    # --- 1. Πίνακας Nulls ---
     print("Υπολογισμός Nulls...")
     def get_null_percentages(df):
         total_rows = df.count()
         if total_rows == 0: return {}
-        null_exprs = [spark_round((count(when(col(c).isNull(), c)) / total_rows) * 100, 4).alias(c) for c in df.columns]
-        nulls_row = df.select(*null_exprs).first().asDict()
-        # Ταξινόμηση φθίνουσα
+        # (Ο δικός σου κώδικας για τα nulls εδώ)
+        nulls_row = df.select([spark_round((count(when(col(c).isNull(), c)) / total_rows) * 100, 2).alias(c) for c in df.columns]).first().asDict()
         return dict(sorted(nulls_row.items(), key=lambda item: item[1], reverse=True))
 
-    eda_results["null_percentages_2015"] = get_null_percentages(df_2015)
+    # eda_results["null_percentages_2015"] = get_null_percentages(df_2015)
     eda_results["null_percentages_2024"] = get_null_percentages(df_2024)
 
-    # --- 2. Κατανομή Ωρών (2015 & 2024) ---
+    # --- 2. Κατανομή Ωρών ---
     print("Υπολογισμός κατανομής ωρών...")
-    hours_2015 = df_2015.groupBy("pickup_hour").count().orderBy("pickup_hour").collect()
+    # hours_2015 = df_2015.groupBy("pickup_hour").count().orderBy("pickup_hour").collect()
     hours_2024 = df_2024.groupBy("pickup_hour").count().orderBy("pickup_hour").collect()
-    eda_results["hourly_distribution_2015"] = {row['pickup_hour']: row['count'] for row in hours_2015}
+    
+    # eda_results["hourly_distribution_2015"] = {row['pickup_hour']: row['count'] for row in hours_2015}
     eda_results["hourly_distribution_2024"] = {row['pickup_hour']: row['count'] for row in hours_2024}
+
+    # ΑΠΟ ΕΔΩ ΚΑΙ ΚΑΤΩ ΑΦΗΝΕΙΣ ΤΟΝ ΚΩΔΙΚΑ ΣΟΥ ΟΠΩΣ ΕΙΝΑΙ (Σημείο 3. Κατανομή Ημερών κλπ)
 
     # --- 3. Κατανομή Ημερών (μόνο 2024) ---
     print("Υπολογισμός κατανομής ημερών 2024...")
@@ -89,6 +96,8 @@ def main():
         json.dump(eda_results, f, indent=4, ensure_ascii=False)
 
     print("Το EDA ολοκληρώθηκε! Τα metrics αποθηκεύτηκαν στο results/metrics/eda_metrics.json")
+    print("\n=== METRICS JSON ===")
+    print(json.dumps(eda_results, indent=4, ensure_ascii=False))
     spark.stop()
 
 if __name__ == "__main__":

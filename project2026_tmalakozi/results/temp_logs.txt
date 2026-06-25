@@ -1,0 +1,115 @@
+
+==================================================
+ΦΥΣΙΚΟ ΣΧΕΔΙΟ ΕΚΤΕΛΕΣΗΣ (CATALYST EXPLAIN FORMATTED)
+==================================================
+26/06/09 18:55:15 INFO DataSourceStrategy: Pruning directories with: pickup_day#25 IN (12,13,14)
+26/06/09 18:55:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(duration_minutes),IsNotNull(trip_distance),IsNotNull(fare_amount),IsNotNull(total_amount),In(pickup_hour, [10,7,8,9]),GreaterThan(duration_minutes,0.0),GreaterThan(trip_distance,0.0),GreaterThan(fare_amount,0.0),GreaterThan(total_amount,0.0),IsNotNull(pu_location_id)
+26/06/09 18:55:15 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(duration_minutes#23),isnotnull(trip_distance#4),isnotnull(fare_amount#10),isnotnull(total_amount#16),pickup_hour#22 IN (7,8,9,10),(duration_minutes#23 > 0.0),(trip_distance#4 > 0.0),(fare_amount#10 > 0.0),(total_amount#16 > 0.0),isnotnull(pu_location_id#7)
+26/06/09 18:55:15 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LocationID)
+26/06/09 18:55:15 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LocationID#69)
+== Physical Plan ==
+AdaptiveSparkPlan (14)
++- TakeOrderedAndProject (13)
+   +- Filter (12)
+      +- HashAggregate (11)
+         +- Exchange (10)
+            +- HashAggregate (9)
+               +- Project (8)
+                  +- BroadcastHashJoin Inner BuildRight (7)
+                     :- Project (3)
+                     :  +- Filter (2)
+                     :     +- Scan parquet  (1)
+                     +- BroadcastExchange (6)
+                        +- Filter (5)
+                           +- Scan csv  (4)
+
+
+(1) Scan parquet 
+Output [14]: [trip_distance#4, pu_location_id#7, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_hour#22, duration_minutes#23, pickup_day#25]
+Batched: true
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/tbalanou/project2026/data/parquet/yellow_tripdata_2024]
+PartitionFilters: [pickup_day#25 IN (12,13,14)]
+PushedFilters: [IsNotNull(duration_minutes), IsNotNull(trip_distance), IsNotNull(fare_amount), IsNotNull(total_amount), In(pickup_hour, [10,7,8,9]), GreaterThan(duration_minutes,0.0), GreaterThan(trip_distance,0.0), GreaterThan(fare_amount,0.0), GreaterThan(total_amount,0.0), IsNotNull(pu_location_id)]
+ReadSchema: struct<trip_distance:double,pu_location_id:int,fare_amount:double,extra:double,mta_tax:double,tip_amount:double,tolls_amount:double,improvement_surcharge:double,total_amount:double,congestion_surcharge:double,airport_fee:double,pickup_hour:int,duration_minutes:double>
+
+(2) Filter
+Input [14]: [trip_distance#4, pu_location_id#7, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_hour#22, duration_minutes#23, pickup_day#25]
+Condition : (((((((((isnotnull(duration_minutes#23) AND isnotnull(trip_distance#4)) AND isnotnull(fare_amount#10)) AND isnotnull(total_amount#16)) AND pickup_hour#22 IN (7,8,9,10)) AND (duration_minutes#23 > 0.0)) AND (trip_distance#4 > 0.0)) AND (fare_amount#10 > 0.0)) AND (total_amount#16 > 0.0)) AND isnotnull(pu_location_id#7))
+
+(3) Project
+Output [8]: [trip_distance#4, pu_location_id#7, fare_amount#10, tip_amount#13, total_amount#16, duration_minutes#23, CASE WHEN (trip_distance#4 < 1.0) THEN very_short WHEN ((trip_distance#4 >= 1.0) AND (trip_distance#4 < 3.0)) THEN short WHEN ((trip_distance#4 >= 3.0) AND (trip_distance#4 < 10.0)) THEN medium ELSE long END AS distance_bucket#77, (((((coalesce(extra#11, 0.0) + coalesce(mta_tax#12, 0.0)) + coalesce(tolls_amount#14, 0.0)) + coalesce(improvement_surcharge#15, 0.0)) + coalesce(congestion_surcharge#17, 0.0)) + coalesce(Airport_fee#18, 0.0)) AS total_surcharges#78]
+Input [14]: [trip_distance#4, pu_location_id#7, fare_amount#10, extra#11, mta_tax#12, tip_amount#13, tolls_amount#14, improvement_surcharge#15, total_amount#16, congestion_surcharge#17, airport_fee#18, pickup_hour#22, duration_minutes#23, pickup_day#25]
+
+(4) Scan csv 
+Output [3]: [LocationID#69, Borough#70, Zone#71]
+Batched: false
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/data/taxi_zone_lookup.csv]
+PushedFilters: [IsNotNull(LocationID)]
+ReadSchema: struct<LocationID:string,Borough:string,Zone:string>
+
+(5) Filter
+Input [3]: [LocationID#69, Borough#70, Zone#71]
+Condition : isnotnull(LocationID#69)
+
+(6) BroadcastExchange
+Input [3]: [LocationID#69, Borough#70, Zone#71]
+Arguments: HashedRelationBroadcastMode(List(cast(cast(input[0, string, false] as int) as bigint)),false), [plan_id=69]
+
+(7) BroadcastHashJoin
+Left keys [1]: [pu_location_id#7]
+Right keys [1]: [cast(LocationID#69 as int)]
+Join type: Inner
+Join condition: None
+
+(8) Project
+Output [9]: [Borough#70 AS pickup_borough#79, Zone#71 AS pickup_zone#80, distance_bucket#77, trip_distance#4, duration_minutes#23, fare_amount#10, tip_amount#13, total_amount#16, total_surcharges#78]
+Input [11]: [trip_distance#4, pu_location_id#7, fare_amount#10, tip_amount#13, total_amount#16, duration_minutes#23, distance_bucket#77, total_surcharges#78, LocationID#69, Borough#70, Zone#71]
+
+(9) HashAggregate
+Input [9]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, trip_distance#4, duration_minutes#23, fare_amount#10, tip_amount#13, total_amount#16, total_surcharges#78]
+Keys [3]: [pickup_borough#79, pickup_zone#80, distance_bucket#77]
+Functions [8]: [partial_count(1), partial_sum(total_amount#16), partial_avg(total_amount#16), partial_sum(trip_distance#4), partial_sum(duration_minutes#23), partial_avg(fare_amount#10), partial_avg(tip_amount#13), partial_sum(total_surcharges#78)]
+Aggregate Attributes [11]: [count#111L, sum#112, sum#113, count#114L, sum#115, sum#116, sum#117, count#118L, sum#119, count#120L, sum#121]
+Results [14]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, count#122L, sum#123, sum#124, count#125L, sum#126, sum#127, sum#128, count#129L, sum#130, count#131L, sum#132]
+
+(10) Exchange
+Input [14]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, count#122L, sum#123, sum#124, count#125L, sum#126, sum#127, sum#128, count#129L, sum#130, count#131L, sum#132]
+Arguments: hashpartitioning(pickup_borough#79, pickup_zone#80, distance_bucket#77, 200), ENSURE_REQUIREMENTS, [plan_id=74]
+
+(11) HashAggregate
+Input [14]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, count#122L, sum#123, sum#124, count#125L, sum#126, sum#127, sum#128, count#129L, sum#130, count#131L, sum#132]
+Keys [3]: [pickup_borough#79, pickup_zone#80, distance_bucket#77]
+Functions [8]: [count(1), sum(total_amount#16), avg(total_amount#16), sum(trip_distance#4), sum(duration_minutes#23), avg(fare_amount#10), avg(tip_amount#13), sum(total_surcharges#78)]
+Aggregate Attributes [8]: [count(1)#89L, sum(total_amount#16)#90, avg(total_amount#16)#91, sum(trip_distance#4)#93, sum(duration_minutes#23)#95, avg(fare_amount#10)#96, avg(tip_amount#13)#97, sum(total_surcharges#78)#98]
+Results [11]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, count(1)#89L AS trips#81L, round(sum(total_amount#16)#90, 2) AS total_revenue#82, round(avg(total_amount#16)#91, 2) AS avg_revenue_per_trip#83, round((sum(total_amount#16)#90 / sum(trip_distance#4)#93), 2) AS revenue_per_mile#84, round((sum(total_amount#16)#90 / sum(duration_minutes#23)#95), 2) AS revenue_per_minute#85, round(avg(fare_amount#10)#96, 2) AS avg_fare_amount#86, round(avg(tip_amount#13)#97, 2) AS avg_tip_amount#87, round((sum(total_surcharges#78)#98 / sum(total_amount#16)#90), 4) AS surcharge_share#88]
+
+(12) Filter
+Input [11]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, trips#81L, total_revenue#82, avg_revenue_per_trip#83, revenue_per_mile#84, revenue_per_minute#85, avg_fare_amount#86, avg_tip_amount#87, surcharge_share#88]
+Condition : (trips#81L >= 50)
+
+(13) TakeOrderedAndProject
+Input [11]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, trips#81L, total_revenue#82, avg_revenue_per_trip#83, revenue_per_mile#84, revenue_per_minute#85, avg_fare_amount#86, avg_tip_amount#87, surcharge_share#88]
+Arguments: 17, [total_revenue#82 DESC NULLS LAST], [pickup_borough#79, pickup_zone#80, distance_bucket#77, trips#81L, total_revenue#82, avg_revenue_per_trip#83, revenue_per_mile#84, revenue_per_minute#85, avg_fare_amount#86, avg_tip_amount#87, surcharge_share#88]
+
+(14) AdaptiveSparkPlan
+Output [11]: [pickup_borough#79, pickup_zone#80, distance_bucket#77, trips#81L, total_revenue#82, avg_revenue_per_trip#83, revenue_per_mile#84, revenue_per_minute#85, avg_fare_amount#86, avg_tip_amount#87, surcharge_share#88]
+Arguments: isFinalPlan=false
+
+
+
+=== ΧΡΟΝΟΣ ΕΚΤΕΛΕΣΗΣ SPARK SQL: 12.7 δευτερόλεπτα ===
+26/06/09 18:55:15 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/06/09 18:55:15 INFO SparkUI: Stopped Spark web UI at http://q3-sql-py-5196109eadbc731f-driver-svc.tbalanou-priv.svc:4040
+26/06/09 18:55:15 INFO KubernetesClusterSchedulerBackend: Shutting down all executors
+26/06/09 18:55:15 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Asking each executor to shut down
+26/06/09 18:55:15 WARN ExecutorPodsWatchSnapshotSource: Kubernetes client has been closed.
+26/06/09 18:55:16 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/06/09 18:55:16 INFO MemoryStore: MemoryStore cleared
+26/06/09 18:55:16 INFO BlockManager: BlockManager stopped
+26/06/09 18:55:16 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/06/09 18:55:16 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/06/09 18:55:16 INFO SparkContext: Successfully stopped SparkContext
+26/06/09 18:55:16 INFO ShutdownHookManager: Shutdown hook called
+26/06/09 18:55:16 INFO ShutdownHookManager: Deleting directory /var/data/spark-b18d6fd3-fba4-40ff-849a-7c808570a6d9/spark-4623277b-ae6b-4022-94dd-f1ee958aa993
+26/06/09 18:55:16 INFO ShutdownHookManager: Deleting directory /var/data/spark-b18d6fd3-fba4-40ff-849a-7c808570a6d9/spark-4623277b-ae6b-4022-94dd-f1ee958aa993/pyspark-281ccf8d-26de-4ab6-b29b-b8fd54b5bc08
+26/06/09 18:55:16 INFO ShutdownHookManager: Deleting directory /tmp/spark-55eeda17-a39b-4cba-9cd4-78dd493a3516

@@ -1,0 +1,104 @@
+
+==================================================
+ΦΥΣΙΚΟ ΣΧΕΔΙΟ ΕΚΤΕΛΕΣΗΣ (ΧΩΡΙΣ PRUNING)
+==================================================
+26/06/09 19:11:19 INFO DataSourceStrategy: Pruning directories with: 
+26/06/09 19:11:19 INFO FileSourceStrategy: Pushed Filters: IsNotNull(duration_minutes),IsNotNull(trip_distance),In(pickup_hour, [10,7,8,9]),GreaterThan(duration_minutes,0.0),GreaterThan(trip_distance,0.0),IsNotNull(pu_location_id)
+26/06/09 19:11:19 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(duration_minutes#23),isnotnull(trip_distance#4),dayofmonth(cast(tpep_pickup_datetime#1 as date)) IN (12,13,14),pickup_hour#22 IN (7,8,9,10),(duration_minutes#23 > 0.0),(trip_distance#4 > 0.0),isnotnull(pu_location_id#7)
+26/06/09 19:11:19 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LocationID)
+26/06/09 19:11:19 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LocationID#69)
+== Physical Plan ==
+AdaptiveSparkPlan (12)
++- HashAggregate (11)
+   +- Exchange (10)
+      +- HashAggregate (9)
+         +- Project (8)
+            +- BroadcastHashJoin Inner BuildRight (7)
+               :- Project (3)
+               :  +- Filter (2)
+               :     +- Scan parquet  (1)
+               +- BroadcastExchange (6)
+                  +- Filter (5)
+                     +- Scan csv  (4)
+
+
+(1) Scan parquet 
+Output [7]: [tpep_pickup_datetime#1, trip_distance#4, pu_location_id#7, total_amount#16, pickup_hour#22, duration_minutes#23, pickup_day#25]
+Batched: true
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/user/tbalanou/project2026/data/parquet/yellow_tripdata_2024]
+PushedFilters: [IsNotNull(duration_minutes), IsNotNull(trip_distance), In(pickup_hour, [10,7,8,9]), GreaterThan(duration_minutes,0.0), GreaterThan(trip_distance,0.0), IsNotNull(pu_location_id)]
+ReadSchema: struct<tpep_pickup_datetime:string,trip_distance:double,pu_location_id:int,total_amount:double,pickup_hour:int,duration_minutes:double>
+
+(2) Filter
+Input [7]: [tpep_pickup_datetime#1, trip_distance#4, pu_location_id#7, total_amount#16, pickup_hour#22, duration_minutes#23, pickup_day#25]
+Condition : ((((((isnotnull(duration_minutes#23) AND isnotnull(trip_distance#4)) AND dayofmonth(cast(tpep_pickup_datetime#1 as date)) IN (12,13,14)) AND pickup_hour#22 IN (7,8,9,10)) AND (duration_minutes#23 > 0.0)) AND (trip_distance#4 > 0.0)) AND isnotnull(pu_location_id#7))
+
+(3) Project
+Output [2]: [pu_location_id#7, total_amount#16]
+Input [7]: [tpep_pickup_datetime#1, trip_distance#4, pu_location_id#7, total_amount#16, pickup_hour#22, duration_minutes#23, pickup_day#25]
+
+(4) Scan csv 
+Output [2]: [LocationID#69, Zone#71]
+Batched: false
+Location: InMemoryFileIndex [hdfs://hdfs-namenode.default.svc.cluster.local:9000/data/taxi_zone_lookup.csv]
+PushedFilters: [IsNotNull(LocationID)]
+ReadSchema: struct<LocationID:string,Zone:string>
+
+(5) Filter
+Input [2]: [LocationID#69, Zone#71]
+Condition : isnotnull(LocationID#69)
+
+(6) BroadcastExchange
+Input [2]: [LocationID#69, Zone#71]
+Arguments: HashedRelationBroadcastMode(List(cast(cast(input[0, string, false] as int) as bigint)),false), [plan_id=210]
+
+(7) BroadcastHashJoin
+Left keys [1]: [pu_location_id#7]
+Right keys [1]: [cast(LocationID#69 as int)]
+Join type: Inner
+Join condition: None
+
+(8) Project
+Output [2]: [total_amount#16, Zone#71]
+Input [4]: [pu_location_id#7, total_amount#16, LocationID#69, Zone#71]
+
+(9) HashAggregate
+Input [2]: [total_amount#16, Zone#71]
+Keys [1]: [Zone#71]
+Functions [2]: [partial_count(1), partial_sum(total_amount#16)]
+Aggregate Attributes [2]: [count#176L, sum#177]
+Results [3]: [Zone#71, count#178L, sum#179]
+
+(10) Exchange
+Input [3]: [Zone#71, count#178L, sum#179]
+Arguments: hashpartitioning(Zone#71, 200), ENSURE_REQUIREMENTS, [plan_id=215]
+
+(11) HashAggregate
+Input [3]: [Zone#71, count#178L, sum#179]
+Keys [1]: [Zone#71]
+Functions [2]: [count(1), sum(total_amount#16)]
+Aggregate Attributes [2]: [count(1)#169L, sum(total_amount#16)#171]
+Results [3]: [Zone#71, count(1)#169L AS trips#170L, sum(total_amount#16)#171 AS revenue#172]
+
+(12) AdaptiveSparkPlan
+Output [3]: [Zone#71, trips#170L, revenue#172]
+Arguments: isFinalPlan=false
+
+
+
+=== ΧΡΟΝΟΣ ΕΚΤΕΛΕΣΗΣ ABLATION STUDY: 254.23 δευτερόλεπτα ===
+26/06/09 19:11:19 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/06/09 19:11:19 INFO SparkUI: Stopped Spark web UI at http://q3-ablation-py-2981059eadc76aab-driver-svc.tbalanou-priv.svc:4040
+26/06/09 19:11:19 INFO KubernetesClusterSchedulerBackend: Shutting down all executors
+26/06/09 19:11:19 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Asking each executor to shut down
+26/06/09 19:11:19 WARN ExecutorPodsWatchSnapshotSource: Kubernetes client has been closed.
+26/06/09 19:11:20 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/06/09 19:11:20 INFO MemoryStore: MemoryStore cleared
+26/06/09 19:11:20 INFO BlockManager: BlockManager stopped
+26/06/09 19:11:20 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/06/09 19:11:20 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/06/09 19:11:20 INFO SparkContext: Successfully stopped SparkContext
+26/06/09 19:11:20 INFO ShutdownHookManager: Shutdown hook called
+26/06/09 19:11:20 INFO ShutdownHookManager: Deleting directory /tmp/spark-f40e3d4e-7793-4425-b443-c05cd3aad20e
+26/06/09 19:11:20 INFO ShutdownHookManager: Deleting directory /var/data/spark-34a892b8-94a5-4d7b-a3b6-959e32deab1e/spark-d62f4e96-f962-4492-9d7c-ba7b7e676893/pyspark-448ef1f5-17dd-4d5d-bcb0-686a5c0a72fe
+26/06/09 19:11:20 INFO ShutdownHookManager: Deleting directory /var/data/spark-34a892b8-94a5-4d7b-a3b6-959e32deab1e/spark-d62f4e96-f962-4492-9d7c-ba7b7e676893
